@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mortgage Calculator</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/structure.css">
+    <link rel="stylesheet" href="css/form-elements.css">
+</head>
+<body>
+<div class="main-container">
+    <h3 class="app-title">Mortgage Calculator</h3>
+    <hr>
+    <div class="app-form-container">
+        <form>
+            <legend>Change values to calculate your results</legend>
+            <hr>
+            <div class="control-container slider">
+                <label for="range">Default range slider:</label>
+                <div class="range-control">
+                    <span class="min-range">1</span>
+                    <input type="range" id="range" name="range" min="1" max="100" value="50">
+                    <span class="max-range">40</span>
+                </div>
+                <input id="range-text" name="range-text" class="range-number">
+            </div>
+            <div class="control-container slider">
+                <label for="rate">Rate of Interest (%):</label>
+                <div class="range-control">
+                    <span class="min-range">0.1</span>
+                    <input type="range" id="rate" name="rate" min="1" max="100" value="50">
+                    <span class="max-range">0.8</span>
+                </div>
+                <input id="rate-text" name="rate-text" class="range-number">
+            </div>
+            <div class="control-container">
+                <label for="loan">Loan Amount</label>
+                <input type="text" id="loan" name="loan">
+            </div>
+            <div class="control-container">
+                <label for="tax">Annual Tax</label>
+                <input type="text" id="tax" name="tax">
+            </div>
+            <div class="control-container">
+                <label for="insurance">Annual Insurance</label>
+                <input type="text" id="insurance" name="insurance">
+            </div>
+            <button>Calculate</button>
+        </form>
+    </div>
+    <!--- -->
+    <div class="app-results-container">
+        <div class="app-results-content">
+            <h2>Your results</h2>
+            <div>
+                <p>Principle & Interest</p>
+                <div>$ --</div>
+            </div>
+            <div>
+                <p>Tax</p>
+                <div>$ --</div>
+            </div>
+            <div>
+                <p>Insurance</p>
+                <div>$ --</div>
+            </div>
+            <hr>
+            <div>
+                <p>Total Monthly Payment</p>
+                <div>$ --</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

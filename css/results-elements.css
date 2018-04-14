@@ -43,11 +43,23 @@
     text-align: left;
     color: #3e3d3f;
 }
+
 .app-results-content .amount.total {
     font-size: 22px;
     line-height: 1.36;
 }
 
+.app-results-content .amount.result,
+.app-results-content .amount.total.result {
+    opacity: 1;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #3e3d3f;
+}
 
 .app-results-content p.total {
     font-size: 18px;

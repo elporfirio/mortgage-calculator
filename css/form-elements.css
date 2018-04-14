@@ -163,6 +163,7 @@ form .control-container input[type=text] {
     border: solid 1px #cacaca;
     font-size: 16px;
     padding: 0 14px;
+    color: #3e3d3f;
 }
 
 form .control-container input[type=text].currency {
@@ -173,6 +174,19 @@ form .control-container input[type=text].currency {
     width: calc(100% - 54px);
     padding-left: 40px;
     padding-right: 14px;
+}
+
+form .control-container input.range-number {
+    color: #3e3d3f;
+}
+
+form .control-container input.range-number:focus,
+form .control-container input[type=text]:focus {
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 0 rgba(62, 61, 63, 0.62);
+    background-color: #ffffff;
+    border: solid 1px #3e3d3f;
 }
 
 form button {

@@ -37,15 +37,18 @@
             <div class="control-container">
                 <label for="loan">Loan Amount</label>
                 <input type="text" id="loan" name="loan" class="currency" value="1000">
+                <span class="helper error">Loan Amount is mandatory</span>
             </div>
             <div class="row">
                 <div class="control-container half">
                     <label for="tax">Annual Tax</label>
                     <input type="text" id="tax" name="tax" class="currency" value="10000">
+                    <span class="helper error">Annual Tax is mandatory</span>
                 </div>
                 <div class="control-container half">
                     <label for="insurance">Annual Insurance</label>
-                    <input type="text" id="insurance" name="insurance" class="currency" value="300">
+                    <input type="text" id="insurance" name="insurance" class="currency has-error" value="300">
+                    <span class="helper error">Annual Insurance is mandatory</span>
                 </div>
             </div>
             <button>Calculate</button>

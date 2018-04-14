@@ -13,7 +13,7 @@
 
 .app-form-container {
     width: 390px; /* Sumar el padding */
-    height: 522px;
+    height: calc(522px - 34px);
     border-radius: 4px;
     background-color: #ffffff;
     box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);

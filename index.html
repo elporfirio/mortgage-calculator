@@ -15,35 +15,37 @@
         <form>
             <legend>Change values to calculate your results</legend>
             <hr>
-            <div class="control-container slider">
-                <label for="range">Default range slider:</label>
+            <div class="control-container slider first">
+                <label for="range">Years of mortgage:</label>
                 <div class="range-control">
                     <span class="min-range">1</span>
                     <input type="range" id="range" name="range" min="1" max="100" value="50">
                     <span class="max-range">40</span>
                 </div>
-                <input id="range-text" name="range-text" class="range-number">
+                <input id="range-text" name="range-text" class="range-number" value="30">
             </div>
             <div class="control-container slider">
                 <label for="rate">Rate of Interest (%):</label>
                 <div class="range-control">
                     <span class="min-range">0.1</span>
-                    <input type="range" id="rate" name="rate" min="1" max="100" value="50">
-                    <span class="max-range">0.8</span>
+                    <input type="range" id="rate" name="rate" min="1" max="100" value="80">
+                    <span class="max-range">10</span>
                 </div>
-                <input id="rate-text" name="rate-text" class="range-number">
+                <input id="rate-text" name="rate-text" class="range-number" value="8.0">
             </div>
             <div class="control-container">
                 <label for="loan">Loan Amount</label>
-                <input type="text" id="loan" name="loan">
+                <input type="text" id="loan" name="loan" class="currency">
             </div>
-            <div class="control-container">
-                <label for="tax">Annual Tax</label>
-                <input type="text" id="tax" name="tax">
-            </div>
-            <div class="control-container">
-                <label for="insurance">Annual Insurance</label>
-                <input type="text" id="insurance" name="insurance">
+            <div class="row">
+                <div class="control-container half">
+                    <label for="tax">Annual Tax</label>
+                    <input type="text" id="tax" name="tax" class="currency">
+                </div>
+                <div class="control-container half">
+                    <label for="insurance">Annual Insurance</label>
+                    <input type="text" id="insurance" name="insurance" class="currency">
+                </div>
             </div>
             <button>Calculate</button>
         </form>

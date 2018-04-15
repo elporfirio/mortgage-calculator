@@ -225,6 +225,8 @@ form .control-container input.currency.has-error {
 }
 
 .helper.error {
+    display: none;
+
     position: relative;
     font-size: 12px;
     font-weight: bold;
@@ -233,7 +235,6 @@ form .control-container input.currency.has-error {
     line-height: normal;
     letter-spacing: 0;
     text-align: left;
-    display: block;
     min-width: 188px;
     color: #da3535;
 }

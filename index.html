@@ -13,7 +13,7 @@
     <h3 class="app-title">Mortgage Calculator</h3>
     <hr>
     <div class="app-form-container">
-        <form>
+        <form id="mc-form" novalidate>
             <legend>Change values to calculate your results</legend>
             <hr>
             <div class="control-container slider first">
@@ -23,7 +23,7 @@
                     <input type="range" id="range" name="range" min="1" max="40" value="30" ondrag="changethis(this)">
                     <span class="max-range">40</span>
                 </div>
-                <input id="range-text" name="range-text" class="range-number" value="30">
+                <input id="range-text" name="range-text" class="range-number" value="30" readonly>
             </div>
             <div class="control-container slider">
                 <label for="rate">Rate of Interest (%):</label>
@@ -32,22 +32,22 @@
                     <input type="range" id="rate" name="rate" min="1" max="100" value="80">
                     <span class="max-range">10</span>
                 </div>
-                <input id="rate-text" name="rate-text" class="range-number" value="8.0">
+                <input id="rate-text" name="rate-text" class="range-number" value="8.0" readonly>
             </div>
             <div class="control-container">
                 <label for="loan">Loan Amount</label>
-                <input type="text" id="loan" name="loan" class="currency" value="1000">
+                <input type="text" id="loan" name="loan" class="currency" required>
                 <span class="helper error">Loan Amount is mandatory</span>
             </div>
             <div class="row">
                 <div class="control-container half">
                     <label for="tax">Annual Tax</label>
-                    <input type="text" id="tax" name="tax" class="currency" value="10000">
+                    <input type="text" id="tax" name="tax" class="currency" required>
                     <span class="helper error">Annual Tax is mandatory</span>
                 </div>
                 <div class="control-container half">
                     <label for="insurance">Annual Insurance</label>
-                    <input type="text" id="insurance" name="insurance" class="currency has-error" value="300">
+                    <input type="text" id="insurance" name="insurance" class="currency" required>
                     <span class="helper error">Annual Insurance is mandatory</span>
                 </div>
             </div>
@@ -60,20 +60,20 @@
             <h2>Your results</h2>
             <div class="row">
                 <p>Principle & Interest</p>
-                <div class="amount result">$ <span>733.25</span></div>
+                <div class="amount">$ <span id="principle-and-interests">- -</span></div>
             </div>
             <div class="row">
                 <p>Tax</p>
-                <div class="amount">$ <span>83.33</span></div>
+                <div class="amount">$ <span id="tax-result">- -</span></div>
             </div>
             <div class="row">
                 <p>Insurance</p>
-                <div class="amount">$ <span>25.00</span></div>
+                <div class="amount">$ <span id="insurance-result">- -</span></div>
             </div>
             <hr>
             <div class="row">
                 <p class="total">Total Monthly Payment</p>
-                <div class="amount total result">$ <span>841.60</span></div>
+                <div class="amount total">$ <span id="monthly-payment">- -</span></div>
             </div>
         </div>
     </div>

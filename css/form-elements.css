@@ -116,6 +116,7 @@ form .slider .range-control input[type=range] {
     display: block;
     float: left;
 }
+
 /** Webkit **/
 form .slider .range-control input[type=range]:focus {
     outline: none;
@@ -146,7 +147,7 @@ form .slider .range-control input[type=range]::-moz-range-progress {
 }
 
 /** Firefox/Gecko **/
-form .slider .range-control input[type=range]::-moz-range-thumb{
+form .slider .range-control input[type=range]::-moz-range-thumb {
     -moz-appearance: none;
     border-radius: 50%;
     cursor: pointer;
@@ -167,8 +168,7 @@ input[type=range]::-webkit-slider-thumb {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.27);
 }
 
-
-form .slider .range-control input[type=range]::-moz-range-thumb{
+form .slider .range-control input[type=range]::-moz-range-thumb {
     border-radius: 50%;
     cursor: pointer;
     width: 24px;
@@ -240,7 +240,6 @@ form button {
     margin-bottom: 20px;
 }
 
-
 /**** ERRORS **/
 form .control-container input.currency.has-error {
     border-radius: 4px;
@@ -263,6 +262,17 @@ form .control-container input.currency.has-error {
     color: #da3535;
 }
 
+.helper.error.loan:after {
+    content: 'Loan Amount is mandatory';
+}
+
+.helper.error.tax:after {
+    content: 'Annual Tax is mandatory';
+}
+
+.helper.error.insurance:after {
+    content: 'Annual Insurance is mandatory';
+}
 
 /** EDGE **/
 input[type=range]::-ms-track {
@@ -279,14 +289,17 @@ input[type=range]::-ms-track {
     /*remove default tick marks*/
     color: transparent;
 }
+
 input[type=range]::-ms-fill-lower {
     background: #777;
     border-radius: 10px;
 }
+
 input[type=range]::-ms-fill-upper {
     background: #ddd;
     border-radius: 10px;
 }
+
 input[type=range]::-ms-thumb {
     -moz-appearance: none;
     -ms-appearance: none;
@@ -299,14 +312,14 @@ input[type=range]::-ms-thumb {
     background: red;
     z-index: 1;
 }
+
 input[type=range]:focus::-ms-fill-lower {
     background: #888;
 }
+
 input[type=range]:focus::-ms-fill-upper {
     background: #ccc;
 }
-
-
 
 /* =========== MOBILE ============= */
 @media only screen and (max-width: 600px) {
@@ -341,5 +354,12 @@ input[type=range]:focus::-ms-fill-upper {
 
     form .control-container input[type=text].currency {
         background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='14px' width='85px'><text x='2' y='13' fill='%233E3D3F' font-size='14' font-family='sans-serif'>$</text></svg>");
+    }
+
+    .helper.error.loan:after,
+    .helper.error.tax:after,
+    .helper.error.insurance:after {
+        font-size: 10px;
+        content: 'Mandatory field';
     }
 }

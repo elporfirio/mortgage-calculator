@@ -42,3 +42,34 @@
     padding-left: 62px;
     padding-right: 40px;
 }
+
+/* =========== MOBILE ============= */
+@media only screen and (max-width: 600px) {
+    .main-container {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        border: none;
+        height: auto;
+    }
+
+    .app-form-container {
+        width: calc(100% - 40px);
+        margin: 0;
+        padding: 20px;
+        margin-top: 20px;
+        min-height: 0;
+    }
+
+    .app-results-container {
+        width: 298px;
+        height: 440px;
+        background-color: #eaf6fa;
+        margin-top: 66px; /* app-form-margin-top + distance from top */
+        margin-left: -24px;
+
+        float: left;
+        z-index: 5;
+        padding-bottom: 20px;
+    }
+}

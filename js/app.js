@@ -8,6 +8,12 @@ function calculateGradient(rangeElement, textElement, rate) {
     }
 }
 
+function preventTypeNonNumbers(event){
+    if (event.which < 48 || event.which > 57) {
+        event.preventDefault();
+    }
+}
+
 function initializer() {
     var rangeInput = document.getElementById('range');
     var rangeTextInput = document.getElementById('range-text');
@@ -27,6 +33,13 @@ function initializer() {
     });
 
     calculateGradient(rateInput, rateTextInput, 10);
+
+    var textInputs = document.querySelectorAll('input[type=text]');
+
+    textInputs.forEach(function(input){
+        input.addEventListener('keypress', preventTypeNonNumbers);
+        input.addEventListener('paste', function(e){e.preventDefault()});
+    });
 
     var form = document.getElementById('mc-form');
     form.addEventListener('submit', validateForm)
@@ -62,6 +75,8 @@ function calculateMorgage(form) {
     var monthyPaymentResult = document.getElementById('monthly-payment');
     monthyPaymentResult.innerText = monthlyPayment.toFixed(2);
     monthyPaymentResult.parentElement.classList.add('result');
+
+    form.querySelectorAll('button')[0].innerText = 'Recalculate';
 }
 
 function validateForm(event) {

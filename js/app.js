@@ -8,7 +8,7 @@ function calculateGradient(rangeElement, textElement, rate) {
     }
 }
 
-function preventTypeNonNumbers(event){
+function preventTypeNonNumbers(event) {
     if (event.which < 48 || event.which > 57) {
         event.preventDefault();
     }
@@ -36,13 +36,33 @@ function initializer() {
 
     var textInputs = document.querySelectorAll('input[type=text]');
 
-    textInputs.forEach(function(input){
+    textInputs.forEach(function (input) {
         input.addEventListener('keypress', preventTypeNonNumbers);
-        input.addEventListener('paste', function(e){e.preventDefault()});
+        input.addEventListener('paste', function (e) {
+            e.preventDefault()
+        });
     });
 
     var form = document.getElementById('mc-form');
     form.addEventListener('submit', validateForm)
+}
+
+function animate(){
+    /** ANIMATION */
+    var resultDiv = document.getElementsByClassName('app-results-container');
+    resultDiv[0].classList.add('show');
+
+    var scrollSize = resultDiv[0].offsetHeight; // End Height of new document
+
+    var last = document.documentElement.scrollTop; // current position
+    var id = setInterval(function(){
+        if(last < scrollSize){
+            last += 5;
+            document.documentElement.scrollTo(0, last);
+        } else {
+            clearInterval(id);
+        }
+    }, 10);
 }
 
 function calculateMorgage(form) {
@@ -77,6 +97,19 @@ function calculateMorgage(form) {
     monthyPaymentResult.parentElement.classList.add('result');
 
     form.querySelectorAll('button')[0].innerText = 'Recalculate';
+
+    animate();
+}
+
+function move(elem) {
+    var left = 0
+    function frame() {
+        left++  // update parameters
+        elem.style.left = left + 'px' // show frame
+        if (left == 100)  // check finish condition
+            clearInterval(id)
+    }
+    var id = setInterval(frame, 10) // draw every 10ms
 }
 
 function validateForm(event) {
